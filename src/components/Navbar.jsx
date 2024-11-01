@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 z-10 flex w-full items-center justify-between border-b border-b-gray-700 bg-[#1A3055]/70 px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
             <a href="#home" className='bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100'>
-                Lucas Cruz
+                Lucas
             </a>
 
             <ul className='hidden md:flex gap-10'>
