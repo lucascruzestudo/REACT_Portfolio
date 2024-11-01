@@ -2,10 +2,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { BiX, BiMenu } from 'react-icons/bi';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
+import translations from '../locales/translations.js';
 
-const Navbar = () => {
+const Navbar = ({ language, toggleLanguage }) => {
     const [isOpen, setIsOpen] = useState(false);
     const navbarRef = useRef(null);
+    const t = translations[language].nav;
 
     const menuOpen = () => {
         setIsOpen(!isOpen);
@@ -19,7 +21,7 @@ const Navbar = () => {
 
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
-                return () => {
+        return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
@@ -31,10 +33,10 @@ const Navbar = () => {
             </a>
 
             <ul className="hidden md:flex gap-10">
-                <li><a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">Home</a></li>
-                <li><a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">Tech</a></li>
-                <li><a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">Projects</a></li>
-                <li><a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">Contact</a></li>
+                <li><a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">{t.home}</a></li>
+                <li><a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">{t.tech}</a></li>
+                <li><a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">{t.projects}</a></li>
+                <li><a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">{t.contact}</a></li>
             </ul>
 
             <ul className="hidden md:flex gap-5">
@@ -49,6 +51,15 @@ const Navbar = () => {
                     </a>
                 </li>
             </ul>
+
+            <div className="hidden md:flex">
+                <button
+                    onClick={toggleLanguage}
+                    className="cursor-pointer text-lg opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100"
+                >
+                    {language === 'en' ? 'PT' : 'EN'}
+                </button>
+            </div>
 
             {isOpen ? (
                 <BiX className="block md:hidden text-4xl" onClick={menuOpen} />

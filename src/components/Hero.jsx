@@ -4,8 +4,11 @@ import Resume from '/public/resume.pdf';
 import { motion } from 'framer-motion';
 import { HiDocumentArrowDown } from 'react-icons/hi2';
 import { MdEmail } from 'react-icons/md';
+import translations from '../locales/translations.js';
 
-const Hero = () => {
+const Hero = ({ language }) => {
+  const t = translations[language];
+
   return (
     <div id="home" className='px-16 flex min-h-screen w-full items-center justify-center py-28 md:px-32'>
       <div className='flex flex-col items-center justify-center gap-10 text-white'>
@@ -23,10 +26,10 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className='flex max-w-[600px] flex-col items-center justify-center gap-3 text-center'>
-          <h1 className='bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent text-5xl font-semibold'>Lucas Gomes Cruz</h1>
-          <h3 className='bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-3xl font-light'>Fullstack Developer</h3>
+          <h1 className='bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent text-5xl font-semibold'>{t.name}</h1>
+          <h3 className='bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent text-3xl font-light'>{t.role}</h3>
           <p className='md:text-base text-pretty text-sm text-gray-300'>
-            Experienced .NET developer with expertise in CQRS and React, delivering high-quality solutions. Seeking to apply my skills in creating robust applications that meet business needs and industry standards while driving value in challenging projects.
+            {t.description}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mt-5">
@@ -36,14 +39,14 @@ const Hero = () => {
               className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-all duration-300 text-sm sm:text-base hover:scale-105"
             >
               <HiDocumentArrowDown className="mr-2" />
-              Download Resume
+              {t.downloadResume}
             </a>
             <a
               href="#contact"
               className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-all duration-300 text-sm sm:text-base hover:scale-105"
             >
               <MdEmail className="mr-2" />
-              Contact Me
+              {t.contactMe}
             </a>
           </div>
         </motion.div>

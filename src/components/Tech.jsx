@@ -2,8 +2,10 @@ import React from 'react'
 import { AiOutlineDotNet } from 'react-icons/ai'
 import { BiLogoDocker, BiLogoPostgresql, BiLogoReact } from 'react-icons/bi'
 import { motion } from 'framer-motion'
+import translations from '../locales/translations.js';
 
-const Tech = () => {
+const Tech = ({language}) => {
+  const t = translations[language];
 
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -18,7 +20,7 @@ const Tech = () => {
       transition={{ duration: 0.5, delay: 0.2 }}
       id="tech"
       className="flex h-screen w-full flex-col items-center justify-center gap-16 py-8">
-      <div className='text-4xl font-light text-white md:text-6xl'>Technologies</div>
+      <div className='text-4xl font-light text-white md:text-6xl'>{t.nav.tech}</div>
       <div className='flex flex-wrap items-center justify-center gap-10 p-5'>
         {[
           { icon: <AiOutlineDotNet />, label: ".NET" },
