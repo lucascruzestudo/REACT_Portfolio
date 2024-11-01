@@ -33,14 +33,14 @@ const Hero = () => {
             <a
               href={Resume}
               download
-              className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-colors duration-300 text-sm sm:text-base"
+              className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-all duration-300 text-sm sm:text-base hover:scale-105"
             >
               <HiDocumentArrowDown className="mr-2" />
               Download Resume
             </a>
             <a
               href="#contact"
-              className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-colors duration-300 text-sm sm:text-base"
+              className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-all duration-300 text-sm sm:text-base hover:scale-105"
             >
               <MdEmail className="mr-2" />
               Contact Me
