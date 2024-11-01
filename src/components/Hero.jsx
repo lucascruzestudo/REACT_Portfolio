@@ -29,20 +29,20 @@ const Hero = () => {
             Experienced .NET developer with expertise in CQRS and React, delivering high-quality solutions. Seeking to apply my skills in creating robust applications that meet business needs and industry standards while driving value in challenging projects.
           </p>
           
-          <div className='flex gap-4 mt-5'>
+          <div className="flex flex-wrap justify-center gap-4 mt-5">
             <a
               href={Resume}
               download
-              className='flex items-center rounded-lg bg-blue-500 px-5 py-2 text-white hover:bg-blue-400 transition-colors duration-300'
+              className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-colors duration-300 text-sm sm:text-base"
             >
-              <HiDocumentArrowDown className='mr-2' />
+              <HiDocumentArrowDown className="mr-2" />
               Download Resume
             </a>
             <a
               href="#contact"
-              className='flex items-center rounded-lg bg-blue-500 px-5 py-2 text-white hover:bg-blue-400 transition-colors duration-300'
+              className="flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-colors duration-300 text-sm sm:text-base"
             >
-              <MdEmail className='mr-2' />
+              <MdEmail className="mr-2" />
               Contact Me
             </a>
           </div>

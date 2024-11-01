@@ -13,17 +13,17 @@ const Contact = () => {
           <p className="text-center md:text-base text-pretty text-sm text-gray-300 flex max-w-[600px]">
             For inquiries regarding potential collaborations, hiring, or any other professional matters, please feel free to reach out. I am always open to discussing new opportunities and will make every effort to respond promptly.
           </p>
-          <div className='flex flex-row gap-5'>
+          <div className='flex flex-wrap justify-center gap-4 mt-5'>
             <a
               href="mailto:lucascruztrabalho@gmail.com"
-              className='flex items-center rounded-lg bg-blue-500 px-5 py-2 text-white hover:bg-blue-400 transition-all duration-300 hover:scale-105'
+              className='flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-all duration-300 text-sm sm:text-base hover:scale-105'
             >
               <MdEmail className='mr-2' />
               Send an e-mail
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=5513998048091&text=Hello,%20I%20am%20reaching%20out%20regarding%20your%20resume.%20Could%20we%20discuss%20this%20further?"
-              className='flex items-center rounded-lg bg-blue-500 px-5 py-2 text-white hover:bg-blue-400 transition-all duration-300 hover:scale-105'
+              className='flex items-center rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 transition-all duration-300 text-sm sm:text-base hover:scale-105'
               target="_blank"
               rel="noopener noreferrer"
             >
