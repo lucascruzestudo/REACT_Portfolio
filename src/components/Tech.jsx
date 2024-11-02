@@ -3,6 +3,8 @@ import { AiOutlineDotNet } from 'react-icons/ai'
 import { BiLogoDocker, BiLogoPostgresql, BiLogoReact } from 'react-icons/bi'
 import { motion } from 'framer-motion'
 import translations from '../locales/translations.js';
+import { SiMicrosoftsqlserver, SiRedis } from 'react-icons/si';
+import { DiRedis } from 'react-icons/di';
 
 const Tech = ({language}) => {
   const t = translations[language];
@@ -26,7 +28,9 @@ const Tech = ({language}) => {
           { icon: <AiOutlineDotNet />, label: ".NET" },
           { icon: <BiLogoReact />, label: "React" },
           { icon: <BiLogoPostgresql />, label: "PostgreSQL" },
+          { icon: <SiMicrosoftsqlserver />, label: "SQL Server" },
           { icon: <BiLogoDocker />, label: "Docker" },
+          { icon: <DiRedis />, label: "Redis" },
         ].map((tech, index) => (
           <div
             key={index}
