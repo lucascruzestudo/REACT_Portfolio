@@ -2,22 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    font-family: 'Poppins', sans-serif;
+@layer base {
+
+  html,
+  body {
+    @apply h-full overflow-hidden;
     scroll-behavior: smooth;
+  }
+
+  #root {
+    @apply h-full overflow-y-auto scroll-smooth;
+    /* Force snap to each section when scrolling */
+    scroll-snap-type: y mandatory;
+    /* Leave space for fixed nav when snapping */
+    scroll-padding-top: 72px;
+  }
+
+  section,
+  .snap-section {
+    scroll-snap-align: start;
+    /* Make each section behave like a full screen page minus nav */
+    height: calc(100vh - 72px);
+    max-height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 0;
+    /* Ensure overflowing content scrolls inside the section instead of pushing other sections */
+    overflow: auto;
+    /* Add vertical gap between sections so they don't visually touch */
+    margin-bottom: 4rem;
+  }
+
+  /* Larger gaps on wider screens */
+  @media (min-width: 768px) {
+    .snap-section { margin-bottom: 10rem; }
+  }
+  @media (min-width: 1024px) {
+    .snap-section { margin-bottom: 20rem; }
+  }
+
+  /* Make sure the last section doesn't leave an excessive blank at the end */
+  .snap-section:last-of-type { margin-bottom: 6rem; }
+
+  /* Show only the active snapped section's content — avoid bleed between sections */
+  .snap-section > * {
+    transition: opacity .35s ease, transform .35s ease, filter .35s ease;
+    will-change: opacity, transform, filter;
+  }
+
+  .snap-section:not(.in-view) > * {
+    opacity: 0;
+    transform: translateY(8px) scale(.995);
+    filter: blur(3px) saturate(.8);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .snap-section.in-view > * {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    pointer-events: auto;
+  }
+
+  * {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+
 }
 
-::-webkit-scrollbar
-{
-    width: 20px;
+/* Custom scrollbar (invisible but usable) */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
-
-::-webkit-scrollbar-track
-{
-    background: rgba(0, 0, 0, 0.9);
+::-webkit-scrollbar-track {
+  background: transparent;
 }
-
-::-webkit-scrollbar-thumb
-{
-    background: linear-gradient(to bottom, rgb(11, 75, 128), rgb(28, 47, 82));
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
 }
